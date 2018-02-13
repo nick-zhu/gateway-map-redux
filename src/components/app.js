@@ -85,17 +85,13 @@ class App extends React.Component {
         mapboxApiAccessToken={token}
       >
         {this.props.gateways.map((gateway, index) => (
-          <Marker
-            key={index}
-            longitude={gateway.longitude}
+          <GatewayMarker
+            size={20}
             latitude={gateway.latitude}
-          >
-            <GatewayMarker
-              size={20}
-              onMouseOver={() => this.setState({ popupInfo: gateway })}
-              onMouseOut={() => this.setState({ popupInfo: null })}
-            />
-          </Marker>
+            longitude={gateway.longitude}
+            onMouseOver={() => this.setState({ popupInfo: gateway })}
+            onMouseOut={() => this.setState({ popupInfo: null })}
+          />
         ))}
         <div className="nav" style={navStyle}>
           <NavigationControl onViewportChange={this._updateViewport} />
@@ -106,10 +102,6 @@ class App extends React.Component {
       </MapGL>
     )
   }
-}
-
-App.defaultProps = {
-  gateways: GATEWAYS
 }
 
 const getVisibleGateways = (gateways, filter) => {

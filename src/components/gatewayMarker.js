@@ -1,17 +1,23 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
+import { Marker } from 'react-map-gl';
 
-export default class GatewayMarker extends PureComponent {
+export default class GatewayMarker extends React.Component {
 
   render() {
-    const {size, onMouseOver, onMouseOut} = this.props;
+    const { size, onMouseOver, onMouseOut, longitude, latitude } = this.props;
 
     return (
-      <div
-        className='oval'
-        style={{ transform: `translate(${-size / 2}px,${-size / 2}px)` }}
-        onMouseOver={onMouseOver}
-        onMouseOut={onMouseOut}
-      ></div>
+      <Marker
+        longitude={longitude}
+        latitude={latitude}
+      >
+        <div
+          className='oval'
+          style={{ transform: `translate(${-size / 2}px,${-size / 2}px)` }}
+          onMouseOver={onMouseOver}
+          onMouseOut={onMouseOut}
+        ></div>
+      </Marker>
     )
   }
 }
