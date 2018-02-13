@@ -67,6 +67,7 @@ class App extends React.Component {
         offsetTop={-10}
         longitude={popupInfo.longitude}
         latitude={popupInfo.latitude}
+        closeButton={false}
       >
         {popupInfo.name}
       </Popup>
