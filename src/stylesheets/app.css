@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+}
+.oval {
+  height: 15px;
+  width: 15px;
+  border: 2px solid black;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.oval:hover, .oval.selected {
+  border: 3px solid black;
+}
+
+.new-gateway-btn {
+  float: left;
+  top: 50%;
+  position: absolute;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+.map-filters {
+  bottom: 0;
+  position: absolute;
+  margin: 10px;
+}
+
+.map-filters button {
+  margin: 5px;
+  padding: 5px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+}
+
+.mapboxgl-ctrl-bottom-right, .mapboxgl-ctrl-bottom-left{
+  display: none;
+}
+
