@@ -31,7 +31,6 @@ class App extends React.Component {
     this.state = {
       viewport: viewport,
       mapStyle: 'mapbox://styles/mapbox/dark-v9',
-      gateways: Object.assign(this.props.gateways, GATEWAYS),
       popupInfo: null
     };
   }
