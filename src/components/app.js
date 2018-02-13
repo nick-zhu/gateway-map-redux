@@ -68,7 +68,7 @@ class App extends React.Component {
         offsetTop={-10}
         longitude={popupInfo.longitude}
         latitude={popupInfo.latitude}
-        onClose={() => this.setState({ popupInfo: null })} >
+      >
         {popupInfo.name}
       </Popup>
     );
@@ -90,7 +90,11 @@ class App extends React.Component {
             longitude={gateway.longitude}
             latitude={gateway.latitude}
           >
-            <GatewayMarker size={20} onClick={() => this.setState({ popupInfo: gateway })} />
+            <GatewayMarker
+              size={20}
+              onMouseOver={() => this.setState({ popupInfo: gateway })}
+              onMouseOut={() => this.setState({ popupInfo: null })}
+            />
           </Marker>
         ))}
         <div className="nav" style={navStyle}>
